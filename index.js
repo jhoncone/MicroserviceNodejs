@@ -31,7 +31,6 @@
 
     axios(config)
     .then(function (response) {
-    response=`Sent`;
     res.send(response);
     })
     .catch(function (error) {
