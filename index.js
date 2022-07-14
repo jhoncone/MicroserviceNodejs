@@ -29,8 +29,8 @@
    const dat2=response2.data;
 
    const obj={
-      "nombre":dat1.nombre,
-      "calificacion":dat2.califi
+      "nombre":dat1[0].nombre,
+      "calificacion":dat2[0].califi
    }
 
  res.send(obj)
