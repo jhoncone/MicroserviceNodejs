@@ -30,7 +30,7 @@
 
    const obj={
       "nombre":dat1[0].nombre,
-      "calificacion":dat2[0].califi
+      "promedio de calificaciones ":dat2[0].califi
    }
 
  res.send(obj)
