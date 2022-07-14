@@ -45,7 +45,8 @@
     res.json(
       {
           "Title": "Hola mundo",
-          "user":usr
+          "user":usr,
+          "hol":"hol"
       }
   );
  console.log('hol')
