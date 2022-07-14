@@ -16,11 +16,18 @@
 
   const axios = require('axios');
   let alumst =async(req,res)=>{
+
+    try {
   console.log('hol')
 
   const response = await axios.get(`http://api.open-notify.org/astros.json`);
 
-  res.json({ mensaje: '¡sent!' ,axio:response})  
+  res.json({ mensaje: '¡sent!' ,axio:response}) 
+  
+} catch (error) {
+  // In the event of an error, return a 500 error and the error message
+  console.error(error);
+}
 
   /*
   axios(config)
