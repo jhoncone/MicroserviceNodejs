@@ -14,6 +14,11 @@
   app.listen(PORT);
   console.log("Running at Port"+PORT);
 
+  var config = {
+    method: 'get',
+    url: 'https://jsonplaceholder.typicode.com/users'
+    };
+
   const axios = require('axios');
   let alumst =function(req,res){
 /*
