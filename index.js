@@ -24,7 +24,8 @@
 
     try {
     const response1 = await axios.get(`https://studests.herokuapp.com/apistudents/getstudents`);
- res.send(response1.data)
+    const response2= await axios.get(`https://servnotas.herokuapp.com/apinotas/getnotas`);
+ res.send(response1.data+response2.data)
  console.log('hol')
 } catch (error) {
   // In the event of an error, return a 500 error and the error message
