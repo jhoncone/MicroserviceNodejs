@@ -32,6 +32,7 @@
     axios(config)
     .then(function (response) {
       users = response.map(user => user.name); 
+      res.send(users)
     })
     .catch(function (error) {
       response=`Failed`;
