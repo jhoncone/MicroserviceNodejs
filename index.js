@@ -42,6 +42,8 @@
     });
   */
  let usr=users[0];
+
+ /*
     res.json(
       {
           "Title": "Hola mundo",
@@ -49,6 +51,8 @@
           "hol":"hol"
       }
   );
+  */
+ res.send(users)
  console.log('hol')
   }
   
