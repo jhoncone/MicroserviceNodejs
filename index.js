@@ -32,10 +32,8 @@
     let users = [];
     console.log('hol')
     axios(config)
-    .then((res)=>{
-      
-        users = res.map(user => user.name); // get only the names of the users and store in an array
-    
+      .then(({ data }) => {
+        users = data.map(user => user.name); // get only the names of the users and store in an array
       });
       /*
     .catch(function (error) {
