@@ -33,7 +33,7 @@
     console.log('hol')
     axios(config)
       .then(({ data }) => {
-        users = data.map(user => user.name); // get only the names of the users and store in an array
+       data.map(user => users.push(user.name)); // get only the names of the users and store in an array
       });
       /*
     .catch(function (error) {
