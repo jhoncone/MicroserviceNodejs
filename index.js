@@ -1,6 +1,3 @@
-
-
-
   var path = require("path");
   var flash = require('express-flash-2');
   var express = require("express");
@@ -33,7 +30,7 @@
   }
 
 
-  
+
   let alumst =function(req,res){
   console.log('hol')
   res.json({ mensaje: '¡sent!' })  
@@ -51,10 +48,5 @@
   */
   }
   
-   app.get('/create_ticket', ticket);
-  app.get('/get_ticket', get_ticket);
-  app.get('/services', services);
-  app.get('/services/:service_id', get_service);
-  app.get('/ticket_img', ticket_img);
   app.get('/img',img_sen);
   app.get('/alums',alumst);
