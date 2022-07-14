@@ -15,23 +15,15 @@
   console.log("Running at Port"+PORT);
 
   const axios = require('axios');
-  let alumst =async(req,res)=>{
+  let alumst =function(req,res){
 
-    try {
-  console.log('hol')
+    let users = []; // names of users will be stored here
+    axios.get("https://jsonplaceholder.typicode.com/users")
+    .then(({ data }) => {
+      users = data.map(user => user.name); // get only the names of the users and store in an array
+    })
 
-  const response = await axios.get(`http://api.open-notify.org/astros.json`);
-
- // res.json({ mensaje: '¡sent!' ,axio:response})
- const { number, people } = response.data;
- //console.log(number)
- 
-  
-} catch (error) {
-  // In the event of an error, return a 500 error and the error message
-  console.error(error);
-}
-
+    return users;
   /*
   axios(config)
   .then(function (response) {
@@ -43,7 +35,7 @@
   res.send(response);
   });
   */
-  res.json({ mensaje: '¡sent!' ,axio:response})
+
   }
   
   app.get('/alums',alumst);
