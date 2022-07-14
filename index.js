@@ -22,7 +22,10 @@
 
   const response = await axios.get(`http://api.open-notify.org/astros.json`);
 
-  res.json({ mensaje: '¡sent!' ,axio:response}) 
+ // res.json({ mensaje: '¡sent!' ,axio:response})
+ const { number, people } = response.data;
+ console.log(number)
+ return response.data; 
   
 } catch (error) {
   // In the event of an error, return a 500 error and the error message
