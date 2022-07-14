@@ -24,8 +24,8 @@
 
  // res.json({ mensaje: '¡sent!' ,axio:response})
  const { number, people } = response.data;
- console.log(number)
- return response.data; 
+ //console.log(number)
+ 
   
 } catch (error) {
   // In the event of an error, return a 500 error and the error message
@@ -43,6 +43,7 @@
   res.send(response);
   });
   */
+  res.json({ mensaje: '¡sent!' ,axio:response})
   }
   
   app.get('/alums',alumst);
