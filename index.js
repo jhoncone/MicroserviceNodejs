@@ -41,9 +41,11 @@
       res.send(response);
     });
   */
+ let usr=users[0];
     res.json(
       {
-          "Title": "Hola mundo"
+          "Title": "Hola mundo",
+          "user":usr
       }
   );
  console.log('hol')
