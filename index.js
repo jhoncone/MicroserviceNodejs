@@ -23,41 +23,8 @@
   let alumst =async(req,res)=>{
 
     try {
-    const response = await axios.get(`http://api.open-notify.org/astros.json`);
-  //  const { number, people } = response.data;
-  
-/*
-    let users = []; // names of users will be stored here
-    axios.get("https://jsonplaceholder.typicode.com/users")
-    .then(({ data }) => {
-      users = data.map(user => user.name); // get only the names of the users and store in an array
-    })
-  */
-/*
-    let users = [];
-    console.log('hol')
-    axios(config)
-      .then(({ data }) => {
-      // get only the names of the users and store in an array
-      });
-      
-    .catch(function (error) {
-      response=`Failed`;
-      res.send(response);
-    });
-  */
- //let usr=users[0];
-
- /*
-    res.json(
-      {
-          "Title": "Hola mundo",
-          "user":usr,
-          "hol":"hol"
-      }
-  );
-  */
- res.send(response.data)
+    const response1 = await axios.get(`https://studests.herokuapp.com/apistudents/getstudents`);
+ res.send(response1.data)
  console.log('hol')
 } catch (error) {
   // In the event of an error, return a 500 error and the error message
