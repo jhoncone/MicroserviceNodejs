@@ -18,9 +18,14 @@
     method: 'get',
     url: 'https://jsonplaceholder.typicode.com/users'
     };
-
+    
   const axios = require('axios');
-  let alumst =function(req,res){
+  let alumst =async(req,res)=>{
+
+    try {
+    const response = await axios.get(`http://api.open-notify.org/astros.json`);
+  //  const { number, people } = response.data;
+  
 /*
     let users = []; // names of users will be stored here
     axios.get("https://jsonplaceholder.typicode.com/users")
@@ -28,20 +33,20 @@
       users = data.map(user => user.name); // get only the names of the users and store in an array
     })
   */
-
+/*
     let users = [];
     console.log('hol')
     axios(config)
       .then(({ data }) => {
-       data.map(user => users.push(user.name)); // get only the names of the users and store in an array
+      // get only the names of the users and store in an array
       });
-      /*
+      
     .catch(function (error) {
       response=`Failed`;
       res.send(response);
     });
   */
- let usr=users[0];
+ //let usr=users[0];
 
  /*
     res.json(
@@ -52,8 +57,14 @@
       }
   );
   */
- res.send(users)
+ res.send(response.data)
  console.log('hol')
+} catch (error) {
+  // In the event of an error, return a 500 error and the error message
+  console.error(error);
+  res.send(error);
+}
+
   }
   
   app.get('/alums',alumst);
