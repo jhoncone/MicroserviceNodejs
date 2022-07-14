@@ -27,18 +27,23 @@
     .then(({ data }) => {
       users = data.map(user => user.name); // get only the names of the users and store in an array
     })
-*/
+  */
 
+    let users = [];
+    console.log('hol')
     axios(config)
-    .then(function (response) {
-      users = response.map(user => user.name); 
-      res.send(users)
-    })
+    .then((res)=>{
+      
+        users = res.map(user => user.name); // get only the names of the users and store in an array
+    
+      });
+      /*
     .catch(function (error) {
       response=`Failed`;
       res.send(response);
     });
-
+  */
+ console.log('hol')
   }
   
   app.get('/alums',alumst);
