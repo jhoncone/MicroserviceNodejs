@@ -14,10 +14,13 @@
   app.listen(PORT);
   console.log("Running at Port"+PORT);
 
-
-  let alumst =function(req,res){
+  const axios = require('axios');
+  let alumst =async(req,res)=>{
   console.log('hol')
-  res.json({ mensaje: '¡sent!' })  
+
+  const response = await axios.get(`http://api.open-notify.org/astros.json`);
+
+  res.json({ mensaje: '¡sent!' ,axio:response})  
 
   /*
   axios(config)
@@ -32,5 +35,4 @@
   */
   }
   
-
   app.get('/alums',alumst);
