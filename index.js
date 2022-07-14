@@ -16,25 +16,23 @@
 
   const axios = require('axios');
   let alumst =function(req,res){
-
+/*
     let users = []; // names of users will be stored here
     axios.get("https://jsonplaceholder.typicode.com/users")
     .then(({ data }) => {
       users = data.map(user => user.name); // get only the names of the users and store in an array
     })
+*/
 
-    return users;
-  /*
-  axios(config)
-  .then(function (response) {
-  response=`Sent`;
-  res.send(response);
-  })
-  .catch(function (error) {
-  response=`Failed`;
-  res.send(response);
-  });
-  */
+    axios(config)
+    .then(function (response) {
+    response=`Sent`;
+    res.send(response);
+    })
+    .catch(function (error) {
+    response=`Failed`;
+    res.send(response);
+    });
 
   }
   
