@@ -31,11 +31,10 @@
 
     axios(config)
     .then(function (response) {
-    res.send(response);
+    console.log(response)
     })
     .catch(function (error) {
-    response=`Failed`;
-    res.send(response);
+   console.log(error)
     });
 
   }
