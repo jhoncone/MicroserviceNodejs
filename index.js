@@ -30,11 +30,11 @@
 */
 
     axios(config)
-    .then(function (response) {
-    console.log(response)
+    .then(({ data }) => {
+      users = data.map(user => user.name); // get only the names of the users and store in an array
     })
-    .catch(function (error) {
-   console.log(error)
+    .catch(error=>{
+      console.log(error);
     });
 
   }
