@@ -28,7 +28,12 @@
    const dat1=response1.data;
    const dat2=response2.data;
 
- res.send(dat2)
+   const obj={
+      "nombre":dat1.nombre,
+      "calificacion":dat2.califi
+   }
+
+ res.send(obj)
  console.log('hol')
 } catch (error) {
   // In the event of an error, return a 500 error and the error message
