@@ -41,6 +41,11 @@
       res.send(response);
     });
   */
+    res.json(
+      {
+          "Title": "Hola mundo"
+      }
+  );
  console.log('hol')
   }
   
