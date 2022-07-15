@@ -4,12 +4,16 @@ var express = require("express");
 var app = express();
 var cookieParser = require('cookie-parser')
 var session = require('express-session');
+var cors = require('cors');
 require("dotenv").config();
 
 app.use(cookieParser());
 app.use(session({ secret: "Secret", saveUninitialized: false, resave: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+app.use(cors({
+  origin: '*'
+}))
 
 let PORT = process.env.PORT;
 
@@ -29,16 +33,23 @@ let alumst = async (req, res) => {
   try {
     const response1 = await axios.get(`https://studests.herokuapp.com/apistudents/getstudents`);
     const response2 = await axios.get(`https://servnotas.herokuapp.com/apinotas/getnotas`);
+
     const dat1 = response1.data;
     const dat2 = response2.data;
 
-    const obj = {
-      "nombre": dat1[0].nombre,
-      "promedio de calificaciones ": dat2[0].califi
+    len = dat1.length < dat2.length ? dat1.length : dat2.length;
+
+    data = []
+    for (let index = 0; index < len; index++) {
+      aux = {
+        "nombre": dat1[index].nombre,
+        "nombrecurso": dat2[index].nombrecurso,
+        "promedio": dat2[index].califi,
+      }
+      data = [...data, aux]
     }
 
-    res.send(obj)
-    console.log('hol')
+    res.send(data)
   } catch (error) {
     // In the event of an error, return a 500 error and the error message
     console.error(error);
